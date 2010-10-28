@@ -246,6 +246,7 @@
     <Compile Include="ScriptGrammar.cs" />
     <Compile Include="Runtime\Scopes\ScriptScope.cs" />
     <Compile Include="Runtime\Scopes\ScriptUsingScope.cs" />
+    <Compile Include="TypeCoercion.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">

@@ -29,6 +29,9 @@ namespace ScriptNET.Ast
         throw new ScriptException("RuntimeHost did not initialize property. Can't find binary operators.");
     }
 
+	static void CoerceToBool(ref object val) {
+	}
+
     public override void Evaluate(IScriptContext context)
     {
       object leftVal, rightVal;
@@ -39,20 +42,26 @@ namespace ScriptNET.Ast
 
       context.Result = RuntimeHost.NullValue;
 
-      if ((oper == "&&" && false.Equals(leftVal)) || (oper == "||" && true.Equals(leftVal)))
-      {
-        handling = OnHandleOperator(this, context, oper, leftVal);
+		if (oper == "&&" || oper == "||") {
+			leftVal = TypeCoercion.CoerceToBool(leftVal);
+			if ((oper == "&&" && false.Equals(leftVal)) || (oper == "||" && true.Equals(leftVal)))
+			{
+				handling = OnHandleOperator(this, context, oper, leftVal);
 
-        if (handling.Cancel)
-          context.Result = handling.Result;
-        else
-          context.Result = leftVal;
+				if (handling.Cancel)
+					context.Result = handling.Result;
+				else
+					context.Result = leftVal;
         
-        return;
-      }
+				return;
+			}
+		}
 
       right.Evaluate(context);
       rightVal = context.Result;
+
+		if (oper == "&&" || oper == "||")
+			rightVal = TypeCoercion.CoerceToBool(rightVal);
 
       handling = OnHandleOperator(this, context, oper, leftVal, rightVal);
       if (handling.Cancel)

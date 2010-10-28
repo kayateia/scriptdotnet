@@ -37,11 +37,15 @@ namespace ScriptNET.Ast
     public override void Evaluate(IScriptContext context)
     {     
       conditionExpression.Evaluate(context);
-      
-#if DEBUG
+
+		// If the answer isn't bool, coerce it to bool if possible.
+		context.Result = TypeCoercion.CoerceToBool(context.Result);
+
+		// Old code: this prevents Javascript-esque if(foo) syntax.
+/* #if DEBUG
       if (!(context.Result is bool))
         throw new ScriptException("Condition expression evaluates non boolean value");      
-#endif
+#endif */
     }
   }
 }
