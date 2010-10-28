@@ -1,0 +1,167 @@
+<html>
+
+<head>
+<title>Statements</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Language Description->Statements</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+
+   <p>
+    A program in Script .NET is a sequence of statements. 
+    There are three usual statements: sequencing (;), loop, and branching.
+   </p>
+
+   <h3>If ... Then ... Else ...</h3>
+   <p>
+    <b>if</b> (Expression) statement <b>else</b> Statement  <br/><br/>
+
+    <div id="Example">
+     Example:<br/><br/>
+      if (x>0) y = y + 1 ; else y = y – 1; <br/>
+      if (x>0) message = 'X is positive';
+    </div>
+   </p>
+
+   <p>
+    <h3>For ...</h3>
+    <b>for</b> (Expression1;Expression2;Expression3) <b>Statement</b>
+    <br/><br/>
+    <div id="Example">
+     Example:<br/><br/>
+      sum=0; <br/>
+      for(i=0; i<10; i++) sum = sum + a[i];<br/>
+   </p>
+
+   <p>
+    <h3>Foreach ... in ...</h3>
+     <b>foreach</b> (Identifier <b>in</b> Expression) Statement
+    <p>
+     The result of Expression calculation must implement IEnumerable. 
+     Expression evaluates only once, before loop starts.
+    </p>
+    <br/><br/>
+    <div id="Example">
+     Example:<br/><br/>
+    
+       arr=[1,2,3,4,5];  sum = 0;<br/>
+       foreach(i in arr ) sum = sum + i;<br/>
+    </div>
+   </p>
+
+
+   <p>
+    <h3>While ...</h3>
+    <b>while</b> (Expression) Statement<br/>
+    <br/><br/>
+    <div id="Example">
+     Example:<br/>
+      while (i>0) i = i-1;<br/>
+    </div>
+   </p>
+
+   <p>
+     <h3>Switch</h3>
+     <div id="code">
+      <b>switch</b> (expr){<br/>
+              &nbsp;&nbsp; <b>case</b> expr1: statement<br/>
+              &nbsp;&nbsp; ... <br/>
+              &nbsp;&nbsp; <b>default:</b> statement <br/>
+      }
+     </div>
+     <br/>
+     <div id="Example">  
+     Example:<br/>
+      switch (i){<br/>
+       &nbsp;&nbsp; case 1: MessageBox.Show('Hello!');<br/>
+       &nbsp;&nbsp; case 2: MessageBox.Show('?');<br/>
+       &nbsp;&nbsp; default: MessageBox.Show('No way');<br/>
+      }
+     </div>
+   </p>
+
+   <p>
+     <h3>Using</h3>
+     <div id="code">
+              &nbsp;&nbsp; <b>using</b> ( object or type ){ <br/>
+              &nbsp;&nbsp;&nbsp; . . .<br/>
+              &nbsp;&nbsp;}<br/>
+     </div>
+
+    <br/>
+    <br/> 
+     Example 1.<br/><br/>
+     <div id="Example">  
+              &nbsp;&nbsp;<b>using</b> (Math) {<br/>
+              &nbsp;&nbsp;&nbsp;  return Pow(2,10);<br/>
+              &nbsp;&nbsp;}<br/>
+     </div>
+     <br/>
+     Example 2.<br/><br/>
+     <div id="code">
+      a = new List<|int|>();<br/>
+      <b>using</b>(a){<br/>
+              &nbsp;&nbsp;&nbsp;  Add(10);<br/>
+              &nbsp;&nbsp;}<br/>
+      return a[0];<br/>
+     </div>
+   </p>
+
+
+   <p>
+    <h3>Break, Continue</h3>
+    Has usual meaning, may be used only inside the loop
+   </p>
+
+   <p>
+     <h3>Return</h3>
+     Used only inside function call
+   </p>
+
+  <h1 class="heading">See Also</h1>              
+  <p>  
+     <a href="Script.NET.Language Description.Expressions.html">Language Description->Expressions</a>
+   | <a href="Script.NET.Language Description.Functions.html">Language Description->Functions</a>
+  </p>
+
+ </div>
+
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 7 -->

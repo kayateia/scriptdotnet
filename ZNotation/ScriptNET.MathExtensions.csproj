@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{550161A4-239A-42DC-8F37-4AB8209F9A78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScriptNET.MathExtensions</RootNamespace>
+    <AssemblyName>ScriptNET.MathExtensions</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>scriptdotnet.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Properties\CommonInfo.cs">
+      <Link>Properties\CommonInfo.cs</Link>
+    </Compile>
+    <Compile Include="Runtime\MutantFramework\DataMutant.cs" />
+    <Compile Include="Runtime\MutantFramework\IMutant.cs" />
+    <Compile Include="Runtime\MutantFramework\Interfaces.cs" />
+    <None Include="Runtime\ObjectBinderHelpers.cs" />
+    <Compile Include="Runtime\RuntimeHost.cs" />
+    <Compile Include="SetObjects\FiniteSet.cs" />
+    <Compile Include="SetObjects\BinarySetRelation.cs" />
+    <Compile Include="SetObjects\CompositeSet.cs" />
+    <Compile Include="SetObjects\FunctionSet.cs" />
+    <Compile Include="SetObjects\SetOperations.cs" />
+    <Compile Include="SetObjects\StandardSets.cs" />
+    <Compile Include="System\Constants.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="System\MathException.cs" />
+    <Compile Include="NominativeObjects\NamedData.cs" />
+    <Compile Include="Tuples\Pair.cs" />
+    <Compile Include="Relation.cs" />
+    <Compile Include="SetObjects\SetInterfaces.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetObjects\SetFunction.cs" />
+    <Compile Include="SetObjects\SetRelation.cs" />
+    <Compile Include="Tuples\Tuple.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Properties\scriptdotnet.snk">
+      <Link>Properties\scriptdotnet.snk</Link>
+    </None>
+    <None Include="scriptdotnet.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RuntimeMathConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScriptDotNet.csproj">
+      <Project>{F1B3ED0C-819F-4065-A45A-C30900914C8E}</Project>
+      <Name>ScriptDotNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

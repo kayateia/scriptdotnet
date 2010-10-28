@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<title>Mutantic Framework</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Mutantic Framework</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+  <h3>Mutantic Framework</h3>
+
+  <p>
+   Mutantic Framework introduces a special kind of "meta" objects for working with objects of any type. 
+  </p>
+ 
+  <p>
+   <b>Definition:</b>
+   Mutant is a special object which could have all properties 
+   (fields, methods, etc), and may be converted to any type 
+   (or assigned to object of any type). 
+   The semantics of such conversion (or assignment) is pragmatically conditional, 
+   i.e. depends on user needs.
+  </p>
+
+  <p>
+    Example. Creation and Usage of MObject: <br/>
+    <code>
+      // Create Data Mutant Object<br/>
+      a = [ Text -> 'Hello from Mutant' ];<br/>
+      // Set Additional Fields<br/>
+      a.Top = 0;<br/>
+      a.Left = 0;<br/>
+      // Set corresponding fields of Windows Form object<br/>
+      // (Mutantic Assignment)<br/>
+      form <b>:=</b> a;<br/>
+    </code>
+  </p>
+
+  <p>
+   <h3>Classes in Script.NET</h3>
+  </p>
+
+  <h1 class="heading">See Also</h1>
+  <p>
+     <a href="Script.NET.Run-time.Using Script.html">Using Script.NET</a>
+   | <a href="Script.NET.Features.Meta-Programming.html">Meta Programming</a>
+  </p>
+ </div>
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 1 -->

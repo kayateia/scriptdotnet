@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<title>Events</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Language Description->Events</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+   <h3>Event Handling</h3>
+
+   Script.NET has limited capabilities of handling .NET events. However it is possible to subscribe 
+   function defined in Script on .NET event.
+   <br/><br/>
+
+   <p style="border: medium double black;padding: 5px">
+   <b>Note:</b> It is possible to subsribe on events having following signature: <br/>
+   <b>public void</b> Event(<b>object</b> sender, <i><b>T</b></i> eventArgs)
+   or which is the same <b>EventHandler&lt;<i>T</i>&gt;</b>.
+   </p>
+
+   Here is an example:<br/><br/>
+   <code>
+&nbsp;&nbsp;function OnClick(s,e) <br/>
+&nbsp;&nbsp;{                     <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;  MessageBox.Show('Hello');<br/>
+&nbsp;&nbsp;}<br/>
+<br/>
+&nbsp;&nbsp;button.Click += OnClick();<br/>
+   </code>
+ 
+   <p>
+    Please note that by default Script.NET runtime will <b>unsubscribe</b> all event-handlers after execution.<br/>
+    This behavior might be tweaked by using config file. <br/> 
+    Please see an <a href="http://www.protsyk.com/scriptdotnet/samples/Forms.txt">Example</a>.
+   </p> 
+
+
+  <h1 class="heading">See Also</h1>              
+  <p>  
+     <a href="Script.NET.Language Description.Functions.html">Language Description->Functions</a>
+  </p>
+
+ </div>
+
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2009, Petro P. Protsyk</p>
+     <p>08 January 2009</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 9 -->

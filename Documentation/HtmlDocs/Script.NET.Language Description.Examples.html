@@ -1,0 +1,91 @@
+<html>
+
+<head>
+<title>Examples</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Language Description->Examples</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+   <h3>Examples</h3>
+  
+   <p>
+    <b>Hello World!</b> <br/>
+    As simple as possible:<br/>
+    <br/>
+    MessageBox.Show('Hello World! This is Script.NET');
+   </p>
+
+   <p>
+    <b>Bubble Sort</b>
+ 
+    <pre>
+         a=[17, 0, 5, 3,1, 2, 55];
+
+         for (i=0; i &lt; a.Length; i=i+1)
+          for (j=i+1; j &lt;  a.Length; j=j+1)
+           if (a[i] &gt; a[j] )
+           {
+             temp = a[i]; 
+             a[i] = a[j];
+             a[j] = temp;
+           }
+
+          s = 'Results:';
+          for (i=0; i &lt; a.Length; i++)
+           s = s + ',' + a[i];
+
+          MessageBox.Show(s); 
+    </pre> 
+
+   <p> 
+     Also you can try to sort array of strings:<br/>
+     a=['hello', 'john', 'piter', 'alex', 'andrey', 'names'];
+   </p>
+
+  <h1 class="heading">See Also</h1>              
+  <p>  
+     <a href="http://protsyk.com/scriptdotnet/examples.html">More Examples</a>
+   | <a href="Script.NET.Run-time.ScriptContext.html">Script Context</a>
+  </p>
+
+ </div>
+
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 10 -->

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<title>Functions</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Language Description->Functions</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+   <h3>Functions</h3>
+  
+   <p>
+    <b>function</b> (id1, id2, ... , idn) { <br/>
+     &nbsp;&nbsp; Statement
+    }<br/>
+    <br/>
+   </p>
+ 
+   <p>
+    A function creates local context during execution. 
+   </p> 
+
+   <div>
+    <b>Example:</b><br/><br/>
+         <code>
+          function fac(n){<br/>
+           &nbsp;&nbsp;if (n==1) return 1;<br/>
+           &nbsp;&nbsp;else return n*fac(n-1);<br/>
+          }<br/>
+          return fac(5);<br/>
+         <br/>
+         //pointer to a function<br/>
+         Func_pointer = fac; <br/>
+         Func_pointer(4); //Call function using pointer<br/>
+         </code>
+   </div>
+
+
+   <h3>Reserved functions</h3>
+   <p>
+    <b>event</b> – assign event to windows forms control; 
+    (<font color="#FF0000">Irony Script.NET has other methods for dealing with <a href="Script.NET.Language Description.Events.html">events</a>.</font>)<br/>
+    <b>eval</b> – evaluates value of an expression;<br/>
+    <b>clear</b> – clears all variables in context;<br/>
+   </p>
+
+  <h1 class="heading">See Also</h1>              
+  <p>  
+     <a href="Script.NET.Language Description.Statements.html">Language Description->Statements</a>
+   | <a href="Script.NET.Language Description.Events.html">Language Description->Events</a>
+   | <a href="Script.NET.Language Description.Examples.html">Language Description->Funtion Examples</a>
+  </p>
+
+ </div>
+
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 8 -->

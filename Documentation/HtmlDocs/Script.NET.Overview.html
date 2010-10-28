@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<title>Overview</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Overview & History</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+  <h3>Script.NET</h3>
+  Script.NET is a scripting engine which can be embedded into .NET framework applications to 
+  perform custom functionality in run-time. It works like VBA in Microsoft Office Applications. 
+  The difference is that Script .NET may use custom object model, different for each application. 
+  Script .NET is written in C#.
+  <br/><br/>
+  Script.NET may be tested on-line: <a href="http://www.protsyk.com/scriptdotnet/runcode.html">Test Now</a>.
+  <br/>
+  Script.NET <a href="http://www.protsyk.com/scriptdotnet/video">Video Tutorials</a>.
+  <br/>
+  Latest news, release announcements and samples may be found on <a href="http://protsyk.com/cms/?cat=10">Script.NET Blog</a>.
+  <br/><br/>
+  The key principles of Script .NET are:
+  <br/>
+  <ul>
+   <li>Be simple
+   <li>Be efficient
+   <li>Be intuitive
+  </ul>
+  <br/>
+  The idea of Script .NET was born 17 September 2007. Then:
+  <br/>
+  <ul>
+   <li>First alpha was released 03 October 2007.
+   <li>04 October – CodeProject Article submitted. 
+   <li>21 October – WikiPedia article. 
+   <li>19-20 Script.NET has been announced on Microsoft community forums and Google groups. 
+   <li>22 October, CodePlex project had been launched. 
+   <li>17 January 2008, <a href="http://protsyk.com/cms/?p=152">DLR implementation</a> of the language started. </li>
+   <li>07 February 2008, <a href="http://protsyk.com/cms/?p=152">The First working prototype of DLR MyL</a> released. </li>
+   <li>22 February 2008, Script.NET grammar was implemented with <a href="http://www.codeproject.com/KB/recipes/Irony.aspx">Irony</a>. </li>
+   <li>27 March 2008, Script.NET run-time was <a href="http://protsyk.com/cms/?p=181">ported on Irony platform</a>. </li>
+   <li>14 April 2008, The work on this help file started. </li>
+  </ul>
+  <br/>
+
+  Previous version of Script.NET parser was based on 
+  <a href="http://cis.paisley.ac.uk/crow-ci0/">C# Compiler Tools</a>.
+  The latest version of the language and all future releases will employ
+  <a href="http://www.codeplex.com/Irony">Irony Compiler Tools</a>.<br/>
+  Irony has important benefits such as:
+   <ul>
+    <li> It utilizes the full potential of c# 2.0 and .NET Framework.  </li>
+    <li> Unlike most existing yacc/lex-style solutions Irony does not employ any scanner or parser 
+         code generation from grammar specifications written in a specialized meta-language. 
+         In Irony the target language grammar is coded directly in c# using operator overloading 
+         to express grammar constructs. 
+         Irony's scanner and parser modules use the grammar encoded as c# class to control the 
+         parsing process.</li>
+    <li> Irony is simple and powerful solution which fits Script.NET principles.
+   </ul>
+
+  <br/><br/>
+  <h3>Getting Started</h3>
+  <p>
+    All you need to start working with Script.NET is to add reference to <b>IronyScriptDotNet.dll</b>  and <b>Irony.dll</b>, 
+  </p>
+  <div>
+   <b>Example IronyScript.NET (in C# code):</b>
+   <code>
+   <br/><br/>
+      using ScriptNET;<br/>
+      ...<br/>
+      RuntimeHost.Initialize();<br/>
+      ...<br/>
+      Script.RunCode(@"About();");
+      <br/>
+   </code>
+   <br/><br/>
+   <b> The best way to start using Script.NET is to watch following <a href="http://www.protsyk.com/scriptdotnet/video/l1-getting-started.avi">screencast</a></b>.
+   <br/>
+  </div>
+  <br/><br/>
+  <br/><br/>
+  <p style="border: medium double black;padding: 5px">
+
+   In previous version of Script.NET - add reference to <b>ScriptDotNet.dll</b>, <br/>
+   <font color="red">Note: this code is obsole and no longer supported</font><br/>
+
+
+   <b>Example Script.NET (in C# code):</b>
+   <br/><br/>
+   <code>
+    using ScriptDotNet;<br/>
+    Script s = Script.Compile(<br/>
+     &nbsp;&nbsp; "MessageBox.Show('Hello .NET! This is Script .NET');");<br/>
+    s.AddType("MessageBox", typeof(MessageBox));<br/>
+    s.Execute();            <br/>
+   </code>
+
+
+
+  </p>
+
+
+  <h1 class="heading">See Also</h1>
+  <p>
+   <a href="Script.NET.Language Description.Types.html">Language Description->Types</a>
+  </p>
+ </div>
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 1 -->

@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<title>Script Scopes</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Script Scopes</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+  <h3>Script Scope</h3>
+  <p>
+
+  The purpose of Script Scope is to resolve names:
+  <ul>
+   <li>Names of variables: associate value with name, return value by given name;</li>
+   <li>Resolve types by given name;</li>
+   <li>Associate name with <cref src="ScriptNET.IInvokable">IInvokable</cref> object.</li>
+  </ul>
+
+  <br/>
+  Script scopes forms tree hierarchy:
+  <br/>
+  <img src="images/scopes.gif" />
+  <br/>
+  There are different types of scopes: local function scope, using statement scope, etc.
+  All of them are used to resolve names: either variable's,type's,function's name or
+  method's and properties' names in of certain object in case of using statement.
+
+  It is possible to inherit and implement a Scope class to introduce custom behavior of
+  name resolution.  
+  </p>
+
+  <p>
+  Before script execution the user can add objects,types and functions into Script's scope,
+  so they will be available for script.
+  <br/>
+  <b>Example</b>:
+  <code>
+   <pre>
+    List<int> vals = new List<int>();
+    vals.AddRange(new int[] { 1, 2, 3, 4 });
+
+    Script script = Script.Compile(@"
+            rez = 0;
+            foreach (number in numbers)
+            rez += number;"
+           ); 
+
+    //Adding variable to script's scope
+    script.Context.SetItem("numbers", ContextItem.Variable, vals); 
+
+    object rez = script.Execute();
+    Console.WriteLine(rez); 
+   </pre>
+  </code>
+  </p>
+
+
+  <h1 class="heading">See Also</h1>
+  <p>
+     <a href="Script.NET.Language Description.Examples.html">Language Description->Examples</a>
+   | <a href="Script.NET.Run-time.Using Script.html">Using Script.NET</a>
+  </p>
+ </div>
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>8 August 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 1 -->

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode title="Script.NET reference Manual" url=".\HtmlDocs\">
+    <siteMapNode title="Overview" url=".\HtmlDocs\Script.NET.Overview.html" isDefault="true">
+      <siteMapNode title="Types" url=".\HtmlDocs\Script.NET.Language Description.Types.html" />
+      <siteMapNode title="Constants" url=".\HtmlDocs\Script.NET.Language Description.Constants.html" />
+      <siteMapNode title="Variables" url=".\HtmlDocs\Script.NET.Language Description.Variables.html" />
+      <siteMapNode title="Arrays" url=".\HtmlDocs\Script.NET.Language Description.Arrays.html" />
+      <siteMapNode title="Expressions" url=".\HtmlDocs\Script.NET.Language Description.Expressions.html" />
+      <siteMapNode title="Statements" url=".\HtmlDocs\Script.NET.Language Description.Statements.html" />
+      <siteMapNode title="Functions" url=".\HtmlDocs\Script.NET.Language Description.Functions.html" />
+    </siteMapNode>
+    <siteMapNode title="Examples" url=".\HtmlDocs\Script.NET.Language Description.Examples.html">
+      <siteMapNode title="Using .NET objects from Script.NET" url=".\HtmlDocs\Script.NET.Run-time.Using Script.html" />
+    </siteMapNode>
+    <siteMapNode title="Run-time infrastructure" url=".\HtmlDocs\Script.NET.Run-time.html">
+      <siteMapNode title="Scopes" url=".\HtmlDocs\Script.NET.Run-time.Scopes.html" />
+      <siteMapNode title="Script Context" url=".\HtmlDocs\Script.NET.Run-time.ScriptContext.html" />
+      <siteMapNode title="Debugging" url=".\HtmlDocs\Script.NET.Run-time.Debugging.html" />
+    </siteMapNode>
+    <siteMapNode title="Features" url=".\HtmlDocs\Script.NET.Features.html">
+      <siteMapNode title="Mutantic Framework" url=".\HtmlDocs\Script.NET.Features.Muntantic Framework.html" />
+      <siteMapNode title="Meta Programming" url=".\HtmlDocs\Script.NET.Features.Meta-Programming.html" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

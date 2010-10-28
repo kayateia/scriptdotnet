@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<title>Meta Programming</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Meta Programming</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+  <h3>Meta Programming</h3>
+
+  <p>
+   Script .NET has a special quotation operator: <b>&lt;[</b> program ]<b>&gt;</b> 
+   which returns AST of a given program. 
+   The AST of the current program may be accessed with prog object. 
+  </p>
+
+  <p>
+  Here is an example: Modification of current script <br/><br/>
+  <code>
+   //Create an AST for MessageBox.Show('Hello'); program<br/>
+   ast = &lt;[ MessageBox.Show('Hello'); ]&gt;;<br/>
+   //Add this AST at the and of the current program<br/>
+   prog.AppendAst(a);<br/>
+   //MessageBox.Show(prog.ConcreteSyntaxTree());<br/>
+   form.Out(prog.ConcreteSyntaxTree());<br/>
+  </code>
+  </p>
+
+  <p>
+   The <b>&lt;[</b> ... ]<b>&gt;</b> operator and <b>prog</b> object 
+   allows Script.NET to generate new scripts or modify existing script at the run-time.
+  </p>
+
+  <h1 class="heading">See Also</h1>
+  <p>
+   <a href="Script.NET.Features.Muntantic Framework.html">Muntantic Framework</a>
+  </p>
+ </div>
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 1 -->

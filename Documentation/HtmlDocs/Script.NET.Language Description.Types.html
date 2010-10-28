@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<title>Types</title>
+<link rel="stylesheet" type="text/css" href="./styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+
+<body>
+
+<div id="header">
+ <table id="topTable">
+  <tr id="headerTableRow1">
+     <td align="left">
+       <span id="runningHeaderText">Script.NET programming language</span>
+     </td>
+  </tr>
+
+  <tr id="headerTableRow2">
+   <td align="left">
+     <span id="nsrTitle">Language Description->Types</span>
+   </td>
+  </tr>
+ </table>
+</div>
+
+<div id="mainSection">
+
+ <div id="mainBody">
+   <p>
+   For the sake of simplicity there are only four commonly known build-in types:
+   </p>
+
+   <table>
+    <tr>
+     <td>Type Name</td> <td>.NET Analogue</td> <td>Initializer</td>
+    </tr>
+
+    <tr>
+     <td>double</td> <td>double</td> <td>x = 1.23;</td>
+    </tr>
+
+    <tr>
+     <td>long</td> <td>long</td> <td>x = 3;</td>
+    </tr>
+
+    <tr>
+     <td>string</td> <td>string</td> <td>s='Hello World!'</td>
+    </tr>
+
+    <tr>
+     <td>bool</td> <td>bool</td> <td>b = true</td>
+    </tr>
+
+    <tr>
+     <td>array</td> <td>object[]</td> <td>A = [1, 1+2, 'Hello', s]</td>
+    </tr>
+   </table>
+ 
+   <p>
+   There is also implicit type object which is .NET object. 
+   All other types are derived from it. Script .NET supports type importing. 
+   Which means you can add any .NET Framework type to the Script .NET programs 
+   and work with it. 
+   </p>
+
+   <p>Note: If you haven't added your time Script.NET run-time 
+   will search it in libraries loaded into current application domain. 
+   If the type was found then it will be cached for further use in Script Context.
+   </p>
+
+  <h1 class="heading">See Also</h1>              
+  <p>
+     <a href="Script.NET.Overview.html">Language Overview</a> 
+   | <a href="Script.NET.Language Description.Constants.html">Language Description->Constants</a>
+  </p>
+
+ </div>
+
+
+ <div id="footer">
+  <div class="footerLine">
+   <img alt="Footer image" width="100%" height="3px" src="icons/footer.gif"></img>
+  </div>
+
+   <div id="Div1"> 
+     <p>Copyright 2008, Petro P. Protsyk</p>
+     <p>11 January 2008</p>
+  </div>
+ </div>
+
+</div>
+
+</body>
+</html>
+
+<!-- @DefaultTopic -->
+<!-- @SortOrder 2 -->

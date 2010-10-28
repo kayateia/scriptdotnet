@@ -1,0 +1,133 @@
+// This code was downloaded from
+//      http://www.protsyk.com/cms
+//    
+//   Date created:
+//      04 April 2008
+//   (c) by Mariya Bezverkha
+
+function IsEnemy(x,y)
+[
+ pre(x>=1 & x<=3 & y>=1 & y<=3);
+ post();
+ invariant();
+]
+{
+ if (CurrentField[(x-1)+(y-1)*3] == 1) return true;
+ return false;
+}
+
+function IsFree(x,y)
+[
+ pre(x>=1 & x<=3 & y>=1 & y<=3);
+ post();
+ invariant();
+]
+{
+ if (CurrentField[(x-1)+(y-1)*3] == 0) return true;
+ return false;
+}
+
+function PointToIndex(x,y)
+{
+ return (x-1)+(y-1)*3;
+}
+
+Triads = [
+ [0,3,6],
+ [1,4,7],
+ [2,5,8],
+ 
+ [3,4,5],
+ [6,7,8],
+ [0,1,2],
+ 
+ [0,4,8],
+ [6,4,2]
+];
+
+function Estimate(Field, player)
+{
+ estimate = 0;
+ foreach(triad in Triads)
+  if ( 
+        ((Field[triad[0]] == 0) | (Field[triad[0]] == player)) &
+        ((Field[triad[1]] == 0) | (Field[triad[1]] == player)) &
+        ((Field[triad[2]] == 0) | (Field[triad[2]] == player))
+     )
+  {
+   for(i=0; i<3; i++)
+    if(Field[triad[i]] != 0)
+        estimate++;
+        
+   if(
+       (Field[triad[0]] == player) &
+       (Field[triad[1]] == player) &
+       (Field[triad[2]] == player)
+      )
+      estimate += 100;
+  }
+  
+  return estimate;
+}
+
+function GetWinPoint()
+{
+  bestX = 1;
+  bestY = 1;
+  estimate  = -1000;
+  estimate1 = -1000;
+  
+  for(i=1;i<4;i++)
+   for(j=1;j<4;j++)
+    if (IsFree(j,i))
+    {
+      CurrentField[PointToIndex(j,i)] = 2;
+      MyEstimate = Estimate(CurrentField, 2);
+
+      for(i1=1;i1<4;i1++)
+        for(j1=1;j1<4;j1++)
+         if (IsFree(j1,i1))
+         {
+           CurrentField[PointToIndex(j1,i1)] = 1;
+           PlEstimate = Estimate(CurrentField, 1);
+           if (estimate1 < PlEstimate) estimate1 = PlEstimate;
+           CurrentField[PointToIndex(j1,i1)] = 0;
+
+           if (PlEstimate > 100) 
+           {
+            bestX = j1;
+            bestY = i1;
+           }
+         }
+
+      if (MyEstimate-estimate1 > estimate)
+      {
+        bestX = j;
+        bestY = i;
+        estimate = MyEstimate-estimate1;
+      }      
+      CurrentField[PointToIndex(j,i)] = 0;
+    }
+    
+  index = PointToIndex(bestX,bestY);
+  return index; 
+}
+
+CurrentField = Field;
+
+count = 0;
+for (i=0;i<9;i++) 
+ if (Field[i]==0) count++;
+ 
+ 
+if (count == 9)
+{
+  random = new Random();
+  index = random.Next(1, 9);
+}
+else
+  index = GetWinPoint();
+
+SetPoint( index );
+Field[ index ] = 2;
+return 'OK';

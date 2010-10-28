@@ -1,0 +1,376 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1B3ED0C-819F-4065-A45A-C30900914C8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScriptNET</RootNamespace>
+    <AssemblyName>ScriptDotNet</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/IronyScriptDotNet/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\scriptdotnet.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\AScriptAstTemplate.cs" />
+    <Compile Include="AST\ScriptGlobalList.cs" />
+    <Compile Include="AST\ScriptTypeExprList.cs" />
+    <Compile Include="AST\ScriptCompoundStatement.cs" />
+    <Compile Include="AST\ScriptElements.cs" />
+    <Compile Include="AST\ScriptMetaExpr.cs" />
+    <Compile Include="AST\ScriptNewArrStmt.cs" />
+    <Compile Include="AST\ScriptProg.cs" />
+    <Compile Include="AST\ScriptSwitchStatement.cs" />
+    <Compile Include="AST\ScriptTryCatchFinallyStatement.cs" />
+    <Compile Include="CustomFunctions\ArrayFunc.cs" />
+    <Compile Include="CustomFunctions\CharFunc.cs" />
+    <Compile Include="CustomFunctions\RunConsole.cs" />
+    <Compile Include="IronyLibrary\AssemblyInfo.cs" />
+    <Compile Include="IronyLibrary\Common.cs" />
+    <Compile Include="IronyLibrary\Compiler\AstProcessing\AstProcessor.cs" />
+    <Compile Include="IronyLibrary\Compiler\AstProcessing\LexicalAddress.cs" />
+    <Compile Include="IronyLibrary\Compiler\AstProcessing\ProcInfo.cs" />
+    <Compile Include="IronyLibrary\Compiler\AstProcessing\Scope.cs" />
+    <Compile Include="IronyLibrary\Compiler\AST\AstNode.cs" />
+    <Compile Include="IronyLibrary\Compiler\AST\AstNodeArgs.cs" />
+    <Compile Include="IronyLibrary\Compiler\AST\AstVisitor.cs" />
+    <Compile Include="IronyLibrary\Compiler\CompilerContext.cs" />
+    <Compile Include="IronyLibrary\Compiler\Enums.cs" />
+    <Compile Include="IronyLibrary\Compiler\EventArgs.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\BnfExpression.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\BnfTerm.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\Grammar.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\GrammarData.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\GrammarDataBuilder.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\NonTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Grammar\Terminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\LanguageCompiler.cs" />
+    <Compile Include="IronyLibrary\Compiler\Parser\Parser.cs" />
+    <Compile Include="IronyLibrary\Compiler\Parser\ParserStack.cs" />
+    <Compile Include="IronyLibrary\Compiler\Scanner\Scanner.cs" />
+    <Compile Include="IronyLibrary\Compiler\Scanner\SourceFile.cs" />
+    <Compile Include="IronyLibrary\Compiler\Scanner\Token.cs" />
+    <Compile Include="IronyLibrary\Compiler\SyntaxError.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\CommentTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\CompoundTerminalBase.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\ConstantTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\CustomTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\IdentifierTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\NumberLiteral.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\RegExBasedTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\StringLiteral.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\SymbolTerminal.cs" />
+    <Compile Include="IronyLibrary\Compiler\Terminals\TerminalFactory.cs" />
+    <Compile Include="IronyLibrary\Compiler\TokenFilters\BraceMatchFilter.cs" />
+    <Compile Include="IronyLibrary\Compiler\TokenFilters\CodeOutlineFilter.cs" />
+    <Compile Include="IronyLibrary\Compiler\TokenFilters\TokenFilter.cs" />
+    <Compile Include="IronyLibrary\Exceptions.cs" />
+    <Compile Include="IronyLibrary\Microsoft\BigInteger.cs" />
+    <Compile Include="IronyLibrary\Microsoft\Complex64.cs" />
+    <Compile Include="IronyLibrary\Microsoft\MathResources.Designer.cs">
+      <DependentUpon>MathResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="IronyLibrary\TextUtils.cs" />
+    <Compile Include="Processing\DebugMarkerVisitor.cs" />
+    <Compile Include="Processing\FunctionDeclarationVisitor.cs" />
+    <Compile Include="Processing\IPostProcessing.cs" />
+    <Compile Include="Properties\CommonInfo.cs" />
+    <Compile Include="CustomFunctions\AboutFunc.cs" />
+    <Compile Include="CustomFunctions\AppendFunc.cs" />
+    <Compile Include="CustomFunctions\EvalFunc.cs" />
+    <Compile Include="CustomFunctions\ReplaceFunc.cs" />
+    <Compile Include="Runtime\AssemblyManager.cs" />
+    <Compile Include="Runtime\Configuration\ConfigSchema.cs" />
+    <Compile Include="Runtime\Configuration\Operator.cs" />
+    <Compile Include="Runtime\Configuration\Reference.cs" />
+    <Compile Include="Runtime\Configuration\ScopeDefinition.cs" />
+    <Compile Include="Runtime\Configuration\ScriptConfiguration.cs" />
+    <Compile Include="Runtime\Configuration\SettingXml.cs" />
+    <Compile Include="Runtime\Configuration\TypeXml.cs" />
+    <Compile Include="Runtime\BaseAssemblyManager.cs" />
+    <Compile Include="Runtime\IAssemblyManager.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\LateBoundMember.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\LateBoundMethod.cs" />
+    <Compile Include="Runtime\ObjectModel\Components\ExpandoWrapper.cs" />
+    <Compile Include="Runtime\ObjectModel\Components\ExplicitInterface.cs" />
+    <Compile Include="Runtime\ObjectModel\Components\NameSpaceResolver.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\BindableAttribute.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\ConstructorBind.cs" />
+    <Compile Include="Runtime\ObjectModel\Components\Expando.cs" />
+    <Compile Include="Runtime\ObjectModel\Components\MemberRename.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\ObjectBinderExtended.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\EventBind.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\PropertyBind.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\FieldBind.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\MethodBind.cs" />
+    <Compile Include="Runtime\ObjectModel\IObjectActivator.cs" />
+    <Compile Include="Runtime\ObjectModel\IObjectBind.cs" />
+    <Compile Include="Runtime\ObjectModel\IObjectBinder.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\ObjectBinder.cs" />
+    <Compile Include="Runtime\ObjectModel\IScriptable.cs" />
+    <Compile Include="Runtime\ObjectModel\ISupportAssign.cs" />
+    <Compile Include="Runtime\ObjectModel\ObjectActivator\ObjectActivator.cs" />
+    <Compile Include="Runtime\ObjectModel\Binder\ObjectBinderHelpers.cs" />
+    <Compile Include="Runtime\IOperatorHandler.cs" />
+    <Compile Include="Runtime\Operators\BinaryOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\BoolOperators.cs" />
+    <Compile Include="Runtime\Operators\Binary\LqOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\GqOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\PowOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\IsOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\LessOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\GrOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\ModOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\DivOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\MulOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\MinusOperator.cs" />
+    <Compile Include="Runtime\Operators\IOperator.cs" />
+    <Compile Include="Runtime\Operators\Binary\PlusOperator.cs" />
+    <Compile Include="Runtime\Operators\UnaryOperator.cs" />
+    <Compile Include="Runtime\Operators\Unary\NegateOperators.cs" />
+    <Compile Include="Runtime\RuntimeHost.cs" />
+    <Compile Include="Runtime\ObjectModel\Components\EventBroker.cs" />
+    <Compile Include="AST\ScriptArrayConstructor.cs" />
+    <Compile Include="AST\ScriptArrayResolution.cs" />
+    <Compile Include="AST\ScriptAssignExpr.cs" />
+    <Compile Include="AST\ScriptAst.cs" />
+    <Compile Include="AST\ScriptBinExpr.cs" />
+    <Compile Include="AST\ScriptCondition.cs" />
+    <Compile Include="AST\ScriptConstExpr.cs" />
+    <Compile Include="AST\ScriptExpr.cs" />
+    <Compile Include="AST\ScriptExprList.cs" />
+    <Compile Include="AST\ScriptFlowControlStatement.cs" />
+    <Compile Include="AST\ScriptForEachStatement.cs" />
+    <Compile Include="AST\ScriptForStatement.cs" />
+    <Compile Include="AST\ScriptFuncContract.cs" />
+    <Compile Include="AST\ScriptFuncContractInv.cs" />
+    <Compile Include="AST\ScriptFuncContractPost.cs" />
+    <Compile Include="AST\ScriptFuncContractPre.cs" />
+    <Compile Include="AST\ScriptFuncParameters.cs" />
+    <Compile Include="AST\ScriptFunctionCall.cs" />
+    <Compile Include="AST\ScriptFunctionDefinition.cs" />
+    <Compile Include="AST\ScriptGenericsPostfix.cs" />
+    <Compile Include="AST\ScriptIfStatement.cs" />
+    <Compile Include="AST\ScriptIsExpr.cs" />
+    <Compile Include="AST\ScriptMObject.cs" />
+    <Compile Include="AST\ScriptMObjectPart.cs" />
+    <Compile Include="AST\ScriptNewStmt.cs" />
+    <Compile Include="AST\ScriptQualifiedName.cs" />
+    <Compile Include="AST\ScriptStatement.cs" />
+    <Compile Include="AST\ScriptSwitchCaseStatement.cs" />
+    <Compile Include="AST\ScriptSwitchDefaultStatement.cs" />
+    <Compile Include="AST\ScriptTypeConstructor.cs" />
+    <Compile Include="AST\ScriptTypeConvertExpr.cs" />
+    <Compile Include="AST\ScriptTypeExpr.cs" />
+    <Compile Include="AST\ScriptUnaryExpr.cs" />
+    <Compile Include="AST\ScriptUsingStatement.cs" />
+    <Compile Include="AST\ScriptWhileStatement.cs" />
+    <Compile Include="Runtime\Exceptions.cs" />
+    <Compile Include="Runtime\ObjectModel\IInvokable.cs" />
+    <Compile Include="Runtime\IScriptContext.cs" />
+    <Compile Include="Runtime\Scopes\EventScopeActivator.cs" />
+    <Compile Include="Runtime\Scopes\INotifyingScope.cs" />
+    <Compile Include="Runtime\Scopes\IScriptScope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\Scopes\IScopeActivator.cs" />
+    <Compile Include="Runtime\Scopes\IScopeFactory.cs" />
+    <Compile Include="Runtime\Scopes\ScopeFactory.cs" />
+    <Compile Include="Runtime\Scopes\FunctionScope.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="Runtime\ScriptContext.cs" />
+    <Compile Include="ScriptGrammar.cs" />
+    <Compile Include="Runtime\Scopes\ScriptScope.cs" />
+    <Compile Include="Runtime\Scopes\ScriptUsingScope.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Design.cd" />
+    <None Include="Properties\scriptdotnet.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RuntimeConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IronyLibrary\Microsoft\MathResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MathResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Microsoft.Scripting.Math</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IronyLibrary\Irony License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CodeAnalysisDictionary.xml" />
+    <Content Include="Examples\Arithmetic.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Array.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\ArraysGenerics.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\assemblies.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\atypeexpr.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Benchmark.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\bool1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\bool2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\bool3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\bubblesort.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Classes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Contracts.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\DbConnection.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\EmbeddedObject.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\for.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\foreach.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Forms.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\GCD.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Graphs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\HelloWorld.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\QuickSort.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Recursion.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\Recursion2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\RSS.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\UIAutomation_FW3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\WinForms.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
