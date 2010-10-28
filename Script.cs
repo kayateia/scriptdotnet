@@ -88,6 +88,17 @@ namespace ScriptNET
       }
     }
 
+	/// <summary>
+	/// Shallowly duplicates this script, with a new context inserted.
+	/// </summary>
+	public Script DuplicateWithNewContext(IScriptContext context)
+	{
+		Script s = new Script(context);
+		s.Ast = this.Ast;
+		s.SourceCode = this.SourceCode;
+		return s;
+	}
+
 	#endregion
 
     #region Service Methods
