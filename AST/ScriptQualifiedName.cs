@@ -341,7 +341,7 @@ namespace ScriptNET.Ast
     {
       IObjectBind methodBind = methodBind = RuntimeHost.Binder.BindToMethod(obj, Name, genericArguments, param);
       if (methodBind != null)
-        return methodBind.Invoke(context, null);
+        return methodBind.Invoke(context, param);
 
       throw MethodNotFoundException(Name, param);
     }
