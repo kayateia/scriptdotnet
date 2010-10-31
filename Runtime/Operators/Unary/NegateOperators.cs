@@ -33,6 +33,10 @@ namespace ScriptNET.Runtime.Operators
       if (type == typeof(float))
         return -(float)value;
 
+		var coerced = TypeCoercion.CoerceToBool(value);
+		if (coerced is bool)
+			return !((bool)coerced);
+
       throw new Exception("Cannot negate value of type: " + type.Name);
     }
   }
