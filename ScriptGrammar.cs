@@ -196,7 +196,7 @@ namespace ScriptNET
                   | "&&" | "||" | "==" | "!=" | greater | less 
                   | ">=" | "<=";
 
-      LUnOp.Rule = Symbol("~") | "-" | "!" | "$";
+      LUnOp.Rule = Symbol("~") | "-" | "!"/* | "$"*/;
 
       ArrayConstructor.Rule = LSb + ExprList + RSb;
       
@@ -306,7 +306,7 @@ namespace ScriptNET
       RegisterOperators(6, "+", "-");
       RegisterOperators(7, "*", "/", "%");
       RegisterOperators(8, Associativity.Right, "^");
-      RegisterOperators(9, "~", "!", "$", "++", "--");
+      RegisterOperators(9, "~", "!", /*"$",*/ "++", "--");
       RegisterOperators(10, ".");
 
       //RegisterOperators(10, Associativity.Right, ".",",", ")", "(", "]", "[", "{", "}");

@@ -33,7 +33,7 @@ namespace Irony.Compiler {
     public static StringLiteral CreateVbString(string name) {
       StringLiteral term = new StringLiteral(name, TermOptions.SpecialIgnoreCase);
       term.AddStartEnd("\"", ScanFlags.DisableEscapes | ScanFlags.AllowDoubledQuote);
-      term.AddSuffixCodes("$", TypeCode.String);
+      // term.AddSuffixCodes("$", TypeCode.String);
       term.AddSuffixCodes("c", TypeCode.Char);
       return term;
     }

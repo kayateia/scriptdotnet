@@ -12,6 +12,7 @@ namespace Irony {
     public const string OctalDigits = "12345670";
     public const string HexDigits = "1234567890aAbBcCdDeEfF";
     public const string BinaryDigits = "01";
+	public const string SpecialStarters = "$#";
 
     public static EscapeTable GetDefaultEscapes() {
       EscapeTable escapes = new EscapeTable();

@@ -34,7 +34,7 @@ namespace Irony.Compiler {
     // are used in QuickParse. Only if QuickParse fails, the process switches to full version with checking every
     // char's category
     public IdentifierTerminal(string name, string extraChars, string extraFirstChars)  : base(name) {
-      AllFirstChars = TextUtils.AllLatinLetters + extraFirstChars;
+      AllFirstChars = TextUtils.AllLatinLetters + extraFirstChars + TextUtils.SpecialStarters;
       AllChars = TextUtils.AllLatinLetters + TextUtils.DecimalDigits + extraChars;
       MatchMode = TokenMatchMode.ByValueThenByType;
     }
