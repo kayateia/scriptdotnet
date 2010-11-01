@@ -12,6 +12,10 @@ internal class TypeCoercion {
 		} else if (obj is string) {
 			// A non-empty string is true.
 			obj = !string.IsNullOrEmpty(obj as string);
+		} else if (obj is Array) {
+			obj = ((Array)obj).Length > 0;
+		} else if (obj == null) {
+			obj = false;
 		} else {
 			// Give the binder a chance to splice in a bool coercion.
 			var equalityMethod = Runtime.RuntimeHost.Binder.BindToMethod(obj, "IsTrue", null, new object[0]);
@@ -21,10 +25,13 @@ internal class TypeCoercion {
 					obj = (bool)result;
 				else
 					obj = obj != null;
-			} else {
-				// A non-null object is true.
-				obj = obj != null;
 			}
+		}
+
+		// If all else fails...
+		if (!(obj is bool)) {
+			// A non-null object is true.
+			obj = obj != null;
 		}
 
 		return obj;
