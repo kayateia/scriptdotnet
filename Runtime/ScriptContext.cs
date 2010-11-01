@@ -90,12 +90,12 @@ namespace ScriptNET.Runtime
     }
 
     #region IScriptScope     
-    public object GetItem(string id, bool throwException)
+    public virtual object GetItem(string id, bool throwException)
     {
       return Scope.GetItem(id, throwException);
     }
 
-    public void SetItem(string id, object value)
+    public virtual void SetItem(string id, object value)
     {
         Scope.SetItem(id, value);
     }
