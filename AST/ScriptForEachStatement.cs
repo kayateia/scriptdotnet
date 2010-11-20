@@ -46,7 +46,7 @@ namespace ScriptNET.Ast
       if (enumerator == null)
         throw new ScriptException("GetEnumerator() method did not found in object: " + context.Result.ToString());
 
-      enumerator.Reset();
+      // enumerator.Reset();
       
       while(enumerator.MoveNext())
       {
