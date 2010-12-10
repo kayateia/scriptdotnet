@@ -2,14 +2,14 @@
 <Configuration>
 
   <References>
-    <Assembly name="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" sn="true"/>
+    <!-- <Assembly name="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" sn="true"/> -->
   </References>
   
   <Types>
     <Type alias="string" name="System.String" />
     <Type alias="int" name="System.Int32" />
     <Type alias="long" name="System.Int64" />
-    <Type alias="Char" name="System.Char" />
+    <Type alias="char" name="System.Char" />
     <Type alias="bool" name="System.Boolean" />
     <Type alias="boolean" name="System.Boolean" />    
     <Type alias="double" name="System.Double" />
