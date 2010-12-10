@@ -253,6 +253,14 @@ namespace ScriptNET.Runtime
         {
           ShortTypes.Add(alias, type);
         }
+		if (Types.ContainsKey(type.FullName))
+		{
+          Types[type.FullName] = type;
+		}
+		else
+		{
+          Types.Add(type.FullName, type);
+		}
       }
       finally
       {
