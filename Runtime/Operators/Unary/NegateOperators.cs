@@ -17,8 +17,7 @@ namespace ScriptNET.Runtime.Operators
 
     public override object Evaluate(object value)
     {
-      if (value == null) throw new NullReferenceException("Cannot negate null value");
-      Type type = value.GetType();
+      Type type = value != null ? value.GetType() : null;
 
       if (type == typeof(Boolean))
         return !(Boolean)value;
