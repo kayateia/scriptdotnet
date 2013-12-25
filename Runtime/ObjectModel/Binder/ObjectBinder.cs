@@ -530,7 +530,17 @@ namespace ScriptNET.Runtime
 
     protected static bool ComposeParametersWeekPredicate(object value, Type targetType)
     {
-      return true;
+      // This is wasteful but needed for Mono, which injects a bunch of new methods
+      // in common types.
+      try
+      {
+      	ConvertToStatic(value, targetType);
+        return true;
+      }
+      catch (Exception)
+      {
+        return false;
+      }
     }
 
     protected static object ComposeParametersWeekConverter(object value, Type targetType)
