@@ -30,3 +30,7 @@ _ReSharper*/
 *.xap
 
 gamedata/
+
+*.pidb
+*.userprefs
+
