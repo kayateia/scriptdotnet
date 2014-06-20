@@ -128,8 +128,8 @@
     <Compile Include="IronyLibrary\Compiler\TokenFilters\CodeOutlineFilter.cs" />
     <Compile Include="IronyLibrary\Compiler\TokenFilters\TokenFilter.cs" />
     <Compile Include="IronyLibrary\Exceptions.cs" />
-    <Compile Include="IronyLibrary\Microsoft\BigInteger.cs" />
-    <Compile Include="IronyLibrary\Microsoft\Complex64.cs" />
+    <None Include="IronyLibrary\Microsoft\BigInteger.cs" />
+    <None Include="IronyLibrary\Microsoft\Complex64.cs" />
     <Compile Include="IronyLibrary\Microsoft\MathResources.Designer.cs">
       <DependentUpon>MathResources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -273,12 +273,12 @@
     <EmbeddedResource Include="RuntimeConfig.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="IronyLibrary\Microsoft\MathResources.resx">
+    <None Include="IronyLibrary\Microsoft\MathResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MathResources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Microsoft.Scripting.Math</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="IronyLibrary\Irony License.txt" />
@@ -366,6 +366,7 @@
     <Content Include="Examples\WinForms.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="IronyLibrary\Microsoft\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

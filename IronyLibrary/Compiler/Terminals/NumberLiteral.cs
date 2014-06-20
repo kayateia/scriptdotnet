@@ -19,8 +19,8 @@ using System.Text;
 using System.Diagnostics;
 
 namespace Irony.Compiler {
-  using BigInteger = Microsoft.Scripting.Math.BigInteger;
-  using Complex64 = Microsoft.Scripting.Math.Complex64;
+/*  using BigInteger = Microsoft.Scripting.Math.BigInteger;
+  using Complex64 = Microsoft.Scripting.Math.Complex64; */
 
 
   //TODO: For VB, we may need to add a flag to automatically use long instead of int (default) when number is too large
@@ -192,9 +192,9 @@ namespace Irony.Compiler {
             if(TryCastToIntegerType(typeCode, details)) //now try to cast the ULong value to the target type 
               return true;
             break;
-          case TypeCodeBigInt:
+          /*case TypeCodeBigInt:
             if (ConvertToBigInteger(details)) return true;
-            break; 
+            break;*/
         }//switch
       }
       return false; 
@@ -272,9 +272,9 @@ namespace Irony.Compiler {
 #else
           if (!Double.TryParse(body, NumberStyles.Float, CultureInfo.InvariantCulture, out dValue)) return false;
 #endif
-          if (typeCode == TypeCodeImaginary)
+          /*if (typeCode == TypeCodeImaginary)
             details.Value = new Complex64(0, dValue);
-          else
+          else */
             details.Value = dValue;
           return true;
         case TypeCode.Single:
@@ -342,7 +342,7 @@ namespace Irony.Compiler {
     }
 
 
-    private bool ConvertToBigInteger(ScanDetails details) {
+    /*private bool ConvertToBigInteger(ScanDetails details) {
       //ignore leading zeros
       details.Body = details.Body.TrimStart('0');
       int bodyLength = details.Body.Length;
@@ -377,7 +377,7 @@ namespace Irony.Compiler {
         bigIntegerValue = checked(bigIntegerValue * safeWordRadix + numberSections[i]);
       details.Value = bigIntegerValue;
       return true;
-    }
+    } */
 
     private int GetRadix(ScanDetails details) {
       if (details.IsSet(ScanFlags.Hex))
