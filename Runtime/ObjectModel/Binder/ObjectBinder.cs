@@ -372,6 +372,13 @@ namespace ScriptNET.Runtime
         return mi.Invoke(value, new object[] { value });
       }
 
+      // Give the target type an opportunity as well.
+      mi = targetType.GetMethod("ConvertType", BindingFlags.Static | BindingFlags.Public, null, new Type[] { valueType }, null);
+      if (mi != null && mi.ReturnType == targetType)
+      {
+        return mi.Invoke(null, new object[] { value });
+      }
+
       //Convertible
       if (value is IConvertible)
       {
