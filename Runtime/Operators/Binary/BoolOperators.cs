@@ -13,7 +13,7 @@ namespace ScriptNET.Runtime.Operators
     public AndOperator() :
       base("&")
     {
-      RegisterEvaluator<Boolean, Boolean>((x, y) => x & y);
+      RegisterEvaluator<int, int>((x, y) => x & y);
     }
   }
 
@@ -37,7 +37,7 @@ namespace ScriptNET.Runtime.Operators
     public OrOperator() :
       base("|")
     {
-      RegisterEvaluator<Boolean, Boolean>((x, y) => x | y);
+      RegisterEvaluator<int, int>((x, y) => x | y);
     }
   }
 
